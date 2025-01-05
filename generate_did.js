@@ -27,7 +27,8 @@ function generateBatchDid() {
 
 // Generate a Product Type DID
 function generateProductTypeDid(type) {
-    const did = `did:prodtype:${type}`;
+    const guid = uuidv4();
+    const did = `did:prodtype:${type}:${guid}`;
     console.log('Generated Product Type DID:', did);
 
     return {

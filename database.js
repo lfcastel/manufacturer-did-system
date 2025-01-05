@@ -1,9 +1,8 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database("database.db"); //
+const db = new sqlite3.Database("database.sqlite"); //
 
 // Initialize tables
 db.serialize(() => {
-    // Product Types
     // Product Types
     db.run(`
         CREATE TABLE IF NOT EXISTS product_types (
@@ -35,3 +34,5 @@ db.serialize(() => {
     `);
 
 })
+
+module.exports = db;

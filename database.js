@@ -6,7 +6,7 @@ db.serialize(() => {
     // Product Types
     // Product Types
     db.run(`
-        CREATE TABLE product_types (
+        CREATE TABLE IF NOT EXISTS product_types (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             type TEXT,
             did TEXT
@@ -15,7 +15,7 @@ db.serialize(() => {
     
     // Batches
     db.run(`
-        CREATE TABLE batches (
+         CREATE TABLE IF NOT EXISTS batches (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         batchDid Text,
         productTypeDid TEXT
@@ -24,7 +24,7 @@ db.serialize(() => {
 
     // Products
     db.run(`
-        CREATE TABLE products (
+         CREATE TABLE IF NOT EXISTS products (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             productDid TEXT,
             color TEXT,

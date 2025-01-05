@@ -1,0 +1,21 @@
+{
+  "name": "manufacturer-did-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "did-core": "^0.0.2",
+    "did-jwt": "^8.0.4",
+    "did-resolver": "^4.1.0",
+    "ethers": "^6.13.4",
+    "express": "^4.21.1",
+    "sqlite3": "^5.1.7",
+    "uuid": "^11.0.3"
+  }
+}

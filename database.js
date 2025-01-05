@@ -8,7 +8,8 @@ db.serialize(() => {
         CREATE TABLE IF NOT EXISTS product_types (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             type TEXT,
-            did TEXT
+            did TEXT,
+            did_document TEXT
         )
     `);
     
@@ -17,7 +18,10 @@ db.serialize(() => {
          CREATE TABLE IF NOT EXISTS batches (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         batchDid Text,
-        productTypeDid TEXT
+        productTypeDid TEXT,
+        did_document TEXT,
+        FOREIGN KEY (productTypeDid) REFERENCES product_types(did),
+        FOREIGN KEY (productDid) REFERENCES products(productDid)
         )
     `);
 
@@ -29,7 +33,10 @@ db.serialize(() => {
             color TEXT,
             weight TEXT,
             batchDid TEXT,
-            productTypeDid TEXT
+            productTypeDid TEXT,
+            did_document TEXT,
+            FOREIGN KEY (batchDid) REFERENCES batches(batchDid),
+            FOREIGN KEY (productTypeDid) REFERENCES product_types(did)
         )
     `);
 

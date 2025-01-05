@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database(':memory:'); // Use in-memory DB for simplicity
+const db = new sqlite3.Database("database.db"); //
 
 // Initialize tables
 db.serialize(() => {

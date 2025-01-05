@@ -27,7 +27,7 @@ app.get('/create_product', (req, res) => {
         // Get the Product Type DID
         db.get(
             'SELECT * FROM product_types WHERE type = ?', 
-            [productType]
+            [productType],
             (err, typeRow) => {
                 if (err) return res.status(500).json({ error: err.message });
 
@@ -40,8 +40,8 @@ app.get('/create_product', (req, res) => {
                 } 
             }
         )
-    }
-)
+    });
+});
 
 app.get('/product_info/:did', (req, res) => {
     const {did} = req.params;
